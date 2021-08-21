@@ -6,13 +6,19 @@ run the command in the project directory: docker build -t home-assignment.jar .
 
 In the project directory, you can run: docker run 9090:8080 home-assignment.jar
 
-### `npm start`
+# Deploy to heroku
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://dashboard.heroku.com/apps/tranquil-peak-25178/deploy/github
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Deployment via GitHub, after pushing new version to the main branch 
+
+press the "Deploy Branch" button and it should build and deploy the project
+
+Deployment URL: https://tranquil-peak-25178.herokuapp.com
+
+(Use Postman with the postman file attachecd for the server interaction) 
+
+
 
 ### `npm test`
 
