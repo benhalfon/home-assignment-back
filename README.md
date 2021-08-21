@@ -9,15 +9,17 @@ including the use of basic authentication
 	* POST /users - adds new users.
 	* DELETE /users?id=<userId> - gets a user id and delete the user with this specific id from the system [1]
 	* GET /users?email=<userEmail> - gets a user email and return its information [1]
-	* GET /users?id=1 - gets a user id and return its information [1]
-	* PUT /users?id=3 - gets a user id by query params and a user information by request body, the function updates the user spesific user (which has the id from the params) with the user information [1]
+	* GET /users?id=<userId> - gets a user id and return its information [1]
+	* PUT /users?id=<userId> - gets a user id by query params and a user information by request body, the function updates the user spesific user (which has the id from the params) with the user information [1]
 	* GET /health - return information about the server health state
-	
+
+[1] using a basic authentication - has to be invoked by a registered user
+
 	
 There is a postman file which contains all the api mapping with run example
 
+postman file name: SonyHome-Assi.postman_collection.json
 
-[1] using a basic authentication - has to be invoked by a registered user
 
 /users
 
