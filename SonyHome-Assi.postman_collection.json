@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "f6eac73e-97bc-45c9-895a-348a1ac4ea53",
+		"name": "Sony",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "displayAll",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ben13@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Ben1994GaGa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverurl}}/users/displayAll",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"users",
+								"displayAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ben13@gmail.com\",\r\n    \"password\": \"Ben1994GaGa\",\r\n    \"firstName\": \"Ben\",\r\n    \"lastName\": \"Halfon\",\r\n    \"birthDate\": \"1994-11-14\",\r\n    \"address\": \"Aria Pohovski 4, Tel-Aviv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverurl}}/users",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverurl}}/users?id=1",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ben12r2@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Ben1994GaGa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverurl}}/users?id=1",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ben13@gmail.com\",\r\n    \"password\": \"benBen12221\",\r\n    \"firstName\": \"Ben\",\r\n    \"lastName\": \"Halfon\",\r\n    \"birthDate\": \"1994-11-14\",\r\n    \"address\": \"Aria Pohovski 4, Tel-Aviv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverurl}}/users?id=1",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by email",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ben13@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Ben1994GaGa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverurl}}/users?email=ben13@gmail.com",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "ben13@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverurl}}/health",
+							"host": [
+								"{{serverurl}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
