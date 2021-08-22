@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	    web.ignoring().antMatchers(HttpMethod.POST,"/users");
 	    web.ignoring().antMatchers(HttpMethod.GET,"/health");
 	    web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**");
-	    
+	    web.ignoring().antMatchers("/error");
 	}
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
