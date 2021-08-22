@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public UserEntity getUser(String email) {
-		return repo.findByEmail(email)
+		return repo.findByEmail(email.toLowerCase())
 				.stream()
 				.findFirst()
 				.orElseThrow(() -> new UserEmailNotExists(email));
@@ -46,6 +46,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public UserEntity addUser(CreateUserBoundary request) {
+		request.setEmail(request.getEmail().toLowerCase());
 		if(repo.findByEmail(request.getEmail()).stream().count() != 0)
 			throw new UserAlreadyExists(request.getEmail());
 		UserEntity add = conversionService.convert(request, UserEntity.class);
@@ -54,6 +55,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserEntity updateUser(long id, UpdateUserBoundary request) {
+		request.setEmail(request.getEmail().toLowerCase());
 		UserEntity current = this.getUser(id);
 		if(!current.getEmail().equals(request.getEmail())) {
 			if(repo.findByEmail(request.getEmail()).stream().count() != 0)
